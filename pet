@@ -11,13 +11,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 1
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-     wait(2)
             end
 	end    
 })
@@ -26,13 +25,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-     wait(2)
             end
 	end    
 })
@@ -41,13 +39,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 3
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-       wait(2)
             end
 	end    
 })
@@ -56,13 +53,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 4
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-     wait(2)
             end
 	end    
 })
@@ -71,13 +67,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 5
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-   wait(2)
             end
 	end    
 })
@@ -86,13 +81,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 6
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-    wait(2)
             end
 	end    
 })
@@ -101,13 +95,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 7
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-    wait(2)
             end
 	end    
 })
@@ -116,13 +109,12 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            while true do
+            task.wait(1)
 		local args = {
     [1] = 8
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
-    wait(2)
             end
 	end    
 })
