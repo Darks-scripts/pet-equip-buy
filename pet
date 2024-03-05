@@ -9,7 +9,7 @@ local MainTab = Window:MakeTab({
 
 MainTab:AddToggle({
 	Name = "poodel potion",
-	Default = false,
+	Default = true,
 	Callback = function(Value)
 		task.wait(2)
                  loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/Potion-poodle/main/Autofuse"))()
@@ -18,9 +18,10 @@ MainTab:AddToggle({
 
 MainTab:AddToggle({
 	Name = "This is a toggle!",
-	Default = false,
+	Default = true,
 	Callback = function(Value)
-		print(Value)
+		task.wait(3)
+                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/owl/main/owlfuse"))()
 	end    
 })
 
