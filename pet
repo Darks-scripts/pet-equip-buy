@@ -1,10 +1,27 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Dark", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local MainTab = Window:MakeTab({
 	Name = "Tab 1",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+
+MainTab:AddToggle({
+	Name = "poodel potion",
+	Default = false,
+	Callback = function(Value)
+		task.wait(2)
+                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/Potion-poodle/main/Autofuse"))()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
 })
 
 MainTab:AddToggle({
