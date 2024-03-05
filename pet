@@ -8,134 +8,6 @@ local MainTab = Window:MakeTab({
 })
 
 MainTab:AddToggle({
-	Name = "poodel potion",
-	Default = true,
-	Callback = function(Value)
-		task.wait(2)
-                 _G.autoFuse = true
-
-local PET_TO_FUSE = "Potion Poodle" -- name of the pet you want to fuse
-local FUSE_AMOUNT = 3 -- amount to put into daycare (3 is the minimum)
-local IS_SHINY = false
-local PET_TYPE = 0 -- change to 2 for Rainbow, 1 for Golden, or 0 for Normal
--- MAKE PET TYPES TO FUSE
-
-
-
-local Workspace = game:GetService("Workspace")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Library = ReplicatedStorage:WaitForChild("Library")
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
-local pets = require(Library).Save.Get().Inventory.Pet
-
-local petId
-for id, petData in pairs(pets) do
-    if petData["id"] == PET_TO_FUSE then
-        print("Found pet:")
-        if tonumber(petData["pt"]) == PET_TYPE then
-            if IS_SHINY then
-                if petData["sh"] then
-                    petId = id
-                    break
-                end
-            else
-                if not petData["sh"] then
-                    petId = id
-                    break
-                end
-            end
-        else
-            petId = id
-        end
-    end
-end
-
-if not petId then
-    print("Pet not found")
-    return
-else
-    print("Found pet: " .. petId)
-end
-
-while _G.autoFuse do
-    local args = {
-        [1] = {
-            [petId] = FUSE_AMOUNT
-        }
-    }
-
-    game:GetService("ReplicatedStorage").Network.FuseMachine_Activate:InvokeServer(unpack(args))
-    task.wait()
-end
-	end    
-})
-
-MainTab:AddToggle({
-	Name = "This is a toggle!",
-	Default = true,
-	Callback = function(Value)
-		task.wait(3)
-                 _G.autoFuse = true
-
-local PET_TO_FUSE = "Owl" -- name of the pet you want to fuse
-local FUSE_AMOUNT = 3 -- amount to put into daycare (3 is the minimum)
-local IS_SHINY = false
-local PET_TYPE = 0 -- change to 2 for Rainbow, 1 for Golden, or 0 for Normal
--- MAKE PET TYPES TO FUSE
-
-
-
-local Workspace = game:GetService("Workspace")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Library = ReplicatedStorage:WaitForChild("Library")
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
-local pets = require(Library).Save.Get().Inventory.Pet
-
-local petId
-for id, petData in pairs(pets) do
-    if petData["id"] == PET_TO_FUSE then
-        print("Found pet:")
-        if tonumber(petData["pt"]) == PET_TYPE then
-            if IS_SHINY then
-                if petData["sh"] then
-                    petId = id
-                    break
-                end
-            else
-                if not petData["sh"] then
-                    petId = id
-                    break
-                end
-            end
-        else
-            petId = id
-        end
-    end
-end
-
-if not petId then
-    print("Pet not found")
-    return
-else
-    print("Found pet: " .. petId)
-end
-
-while _G.autoFuse do
-    local args = {
-        [1] = {
-            [petId] = FUSE_AMOUNT
-        }
-    }
-
-    game:GetService("ReplicatedStorage").Network.FuseMachine_Activate:InvokeServer(unpack(args))
-    task.wait()
-end
-	end    
-})
-
-MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
@@ -197,6 +69,70 @@ MainTab:AddToggle({
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "poodel potion",
+	Default = true,
+	Callback = function(Value)
+		task.wait(2)
+                 _G.autoFuse = true
+
+local PET_TO_FUSE = "Potion Poodle" -- name of the pet you want to fuse
+local FUSE_AMOUNT = 3 -- amount to put into daycare (3 is the minimum)
+local IS_SHINY = false
+local PET_TYPE = 0 -- change to 2 for Rainbow, 1 for Golden, or 0 for Normal
+-- MAKE PET TYPES TO FUSE
+
+
+
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Library = ReplicatedStorage:WaitForChild("Library")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+local pets = require(Library).Save.Get().Inventory.Pet
+
+local petId
+for id, petData in pairs(pets) do
+    if petData["id"] == PET_TO_FUSE then
+        print("Found pet:")
+        if tonumber(petData["pt"]) == PET_TYPE then
+            if IS_SHINY then
+                if petData["sh"] then
+                    petId = id
+                    break
+                end
+            else
+                if not petData["sh"] then
+                    petId = id
+                    break
+                end
+            end
+        else
+            petId = id
+        end
+    end
+end
+
+if not petId then
+    print("Pet not found")
+    return
+else
+    print("Found pet: " .. petId)
+end
+
+while _G.autoFuse do
+    local args = {
+        [1] = {
+            [petId] = FUSE_AMOUNT
+        }
+    }
+
+    game:GetService("ReplicatedStorage").Network.FuseMachine_Activate:InvokeServer(unpack(args))
+    task.wait()
+end
 	end    
 })
 
