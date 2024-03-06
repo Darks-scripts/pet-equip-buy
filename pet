@@ -63,7 +63,7 @@ MainTab:AddToggle({
 	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-            task.wait(254)
+            task.wait(2)
 		local args = {
     [1] = 5
 }
@@ -73,11 +73,11 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Equip
 })
 
 MainTab:AddToggle({
-	Name = "poodel potion",
+	Name = "Pet Equip buy",
 	Default = true,
 	Callback = function(Value)
-		task.wait(2)
-                 _G.autoFuse = true
+            task.wait(256)
+		_G.autoFuse = true
 
 local PET_TO_FUSE = "Potion Poodle" -- name of the pet you want to fuse
 local FUSE_AMOUNT = 3 -- amount to put into daycare (3 is the minimum)
@@ -133,19 +133,6 @@ while _G.autoFuse do
     game:GetService("ReplicatedStorage").Network.FuseMachine_Activate:InvokeServer(unpack(args))
     task.wait()
 end
-	end    
-})
-
-MainTab:AddToggle({
-	Name = "Pet Equip buy",
-	Default = true,
-	Callback = function(Value)
-            task.wait(255)
-		local args = {
-    [1] = 6
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("EquipSlotsMachine_RequestPurchase"):InvokeServer(unpack(args))
 	end    
 })
 
